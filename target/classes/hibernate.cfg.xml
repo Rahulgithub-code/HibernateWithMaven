@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+
+	<session-factory>
+		<!-- Driver path for JDBC -->
+		<property name="connection.driver_class">com.mysql.cj.jdbc.Driver</property>
+
+		<!-- URL for connection -->
+		<property name="connection.url">jdbc:mysql://localhost/myhiber</property>
+
+		<!-- User name of DB -->
+		<property name="connection.username">root</property>
+
+		<!-- Password of DB -->
+		<property name="connection.password"></property>
+
+		<!-- Language for DB -->
+		<property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+
+		<!-- Automate table creation -->
+		<property name="hbm2ddl.auto">create</property>
+
+		<!-- for checkout sql command fired by hibernate -->
+		<property name="show_sql">true</property>
+		
+		<!-- Format SQL query -->
+		<property name="format_sql">true</property>
+		
+		<!-- Mapping only entity/table class -->
+		<mapping class="com.tut.Student" />
+		<mapping class="com.tut.StudentAddress" />
+		<mapping class="com.oneToOne.Question" />
+		<mapping class="com.oneToOne.Answer" />
+		<mapping class="com.oneToMany.QuestionA" />
+		<mapping class="com.oneToMany.AnswerA" />
+		<mapping class="com.manyToMany.Emp" />
+		<mapping class="com.manyToMany.Project" />
+
+	</session-factory>
+
+</hibernate-configuration>
